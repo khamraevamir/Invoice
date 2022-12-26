@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-e_yw!m@1jk-lo(&fob#cm7ctsps8ca#&pa-_6rvzuv5p-8941i
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['factura.pythonanywhere.com', '127.0.0.1']
 
 INSTALLED_APPS = [
     'app',
