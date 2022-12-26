@@ -1,0 +1,44 @@
+.from_, .to_ {
+    height: 160px;
+    border-radius: 25px;
+    border: 1px solid #000;
+}
+
+.data_table {
+    border-collapse: collapse;
+}
+
+
+.data_table td {
+    border: 1px solid #000;
+    padding: 2px 10px;
+    font-size: 17px;
+}
+
+
+.data_table td {
+    width: 50%;
+}
+
+
+.product_table {
+    width: 100%;
+}
+
+
+
+
+.product_table td, .product_table th{
+    border: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+.none-bold {
+    font-weight: normal !important;
+}
