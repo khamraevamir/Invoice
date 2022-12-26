@@ -33,7 +33,7 @@ if(document.querySelector('.clear_button')){
             localStorage.setItem('invoice_data', '[]')
             localStorage.setItem('invoice_products', '[]')
             localStorage.setItem('total_weight', '[]')
-            localStorage.setItem('invoice_products', '[]'),
+            localStorage.setItem('invoice_products', '[]')
 
         }
     })
