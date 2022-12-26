@@ -181,7 +181,10 @@
 
             document.body.innerHTML = printContents;
 
-            window.print();
+             setTimeout(()=> {
+                window.print();
+             }, 1000)
+
 
             document.body.innerHTML = originalContents;
         }
