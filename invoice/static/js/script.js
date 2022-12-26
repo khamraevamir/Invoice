@@ -284,7 +284,7 @@ if(document.querySelector('.invoice_number')){
     document.querySelector('.invoice_number').addEventListener('keyup', (e)=> {
         let target = e.target
         let invoice_number = target.value
-        localStorage.setItem('invoice_number', JSON.stringify(Number(invoice_number)))
+        localStorage.setItem('invoice_number', JSON.stringify(invoice_number))
     })
     let invoice_number = localStorage.getItem('invoice_number')
     document.querySelector('.invoice_number').value = JSON.parse(invoice_number)
