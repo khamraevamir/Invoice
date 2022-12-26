@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link href="{% static 'bulma/css/bulma.min.css' %}"  type="text/css" rel="stylesheet" >
+    <link href="{% static 'css/style.css' %}"  type="text/css" rel="stylesheet" >
+</head>
+<body>
+    <div class="has-background-light">
+        <nav class="navbar container is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+            <a class="navbar-item logo" href="{% url 'index' %}">
+                <img class="mr-3" src="{% static 'images/header.png' %}" alt="">
+                Invoice
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+<!--                  <a class="navbar-item">-->
+<!--                    Главная-->
+<!--                  </a>-->
+
+<!--                  <a class="navbar-item">-->
+<!--                    Info-->
+<!--                  </a>-->
+
+<!--                  <div class="navbar-item has-dropdown is-hoverable">-->
+<!--                    <a class="navbar-link">-->
+<!--                      More-->
+<!--                    </a>-->
+<!--    -->
+<!--                    <div class="navbar-dropdown">-->
+<!--                      <a class="navbar-item">-->
+<!--                        About-->
+<!--                      </a>-->
+<!--                      <a class="navbar-item">-->
+<!--                        Jobs-->
+<!--                      </a>-->
+<!--                      <a class="navbar-item">-->
+<!--                        Contact-->
+<!--                      </a>-->
+<!--                      <hr class="navbar-divider">-->
+<!--                      <a class="navbar-item">-->
+<!--                        Report an issue-->
+<!--                      </a>-->
+<!--                    </div>-->
+<!--                  </div>-->
+              </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a href="tel: +998980775750" class="button is-info">
+                    <strong>+998 98 077 57 50</strong>
+                  </a>
+                  <a href="https://t.me/khamraevamir" class="button is-light">
+                    @khamraevamir
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+          // Get all "navbar-burger" elements
+          const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+          // Add a click event on each of them
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+
+            });
+          });
+
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/f871a93996.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/check.js' %}"></script>
+
+</body>
+</html>

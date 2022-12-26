@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <div class=" ">
+        <div class="header container is-flex is-align-items-center is-justify-content-center">
+            <div class="header-content " >
+
+                <h1 class="title is-1 is-size-3-mobile  has-text-centered">INVOICE
+                </h1>
+
+                <div class="is-flex mx-auto">
+                    <a href="{% url 'questionnaire' %}" class="mr-3 button is-info is-medium  is-block">Старт</a>
+                    <button  class="clear_button button is-danger is-medium mx-auto is-block">Сброс</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

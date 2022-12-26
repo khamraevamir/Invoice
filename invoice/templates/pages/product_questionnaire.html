@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class=" container pt-5 pb-2 px-3">
+    <div class="columns">
+        <div class="column is-half is-desktop mx-auto">
+            <div class="slice_container">
+                <table class="table  is-fullwidth  is-striped " id="myTable">
+                    <thead>
+                    <tr class="">
+                        <th style="">№</th>
+                        <th style="">Наименование</th>
+                        <th style=""></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td data-price="{{product.price}}" data-id="{{product.id}}" id="product_id">
+                            {{forloop.counter}}
+                        </td>
+                        <td id="product_name">{{product.name}}</td>
+                        <td>
+                            <button data-id="{{product.id}}"
+                                    class="add_product button is-success is-small ml-auto is-block">Добавить
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="columns mb-0">
+
+        <div class="column is-half mx-auto">
+            <div class="field mt-4 mb-0">
+                <div class="control">
+                    <label class="label">Поиск товара:</label>
+                    <div class="is-flex is-align-items-center">
+                        <input class="input find_product_input" name="" type="text">
+                        <div class="check_field"></div>
+                    </div>
+
+                </div>
+
+                <div class="selected_products_container">
+                    <h4 class="title is-4 mt-6">Выбранные товары:</h4>
+                    <table class="selected_products_table table  is-fullwidth  is-striped ">
+                        <thead>
+                        <tr class="">
+                            <th style="">Товар</th>
+                            <th style="">Цена</th>
+                            <th style="">Кол-во</th>
+                            <th style=""></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="2">Общая сумма: <span class="total_price"></span>$</th>
+                                <th colspan="2">Общее кол-во: <span class="total_quantity"></span></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="field my-4">
+                        <div class="control">
+                            <label class="label">Общий вес:</label>
+                            <input required  class="input total_weight" value="0" name="total_weight" type="number" >
+                        </div>
+                        <div class="control mt-4">
+                            <label class="label">Номер инвойса:</label>
+                            <input required  class="input invoice_number" value="0" name="total_weight" type="text" >
+                        </div>
+
+                    </div>
+                    <a href="{% url 'factura' %}" class=" mt-5 button is-info is-medium is-fullwidth  is-block">Завершить
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button  onclick="removeProduct(this)"
+            class=" is-hidden hidden_btn remove_btns button is-danger is-small ml-auto  is-block">
+        <span class="icon"><i class="far fa-trash-alt"></i></span>
+    </button>
+</div>
+
+{% endblock %}

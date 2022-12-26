@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <div class=" container py-5 px-3">
+        <form class="columns user_data_form"   >
+            <div class="column is-half mx-auto">
+                <div class="field my-4">
+                    <div class="control">
+                        <label class="label">Ф.И. отправителя:</label>
+                        <input required  class="input" name="sender" type="text" >
+                    </div>
+
+                </div>
+                <div class="field my-4">
+                    <div class="control">
+                        <label class="label">Ф.И. получателя:</label>
+                        <input required  class="input" name="receiver" type="text" >
+                    </div>
+
+                </div>
+                <div class="field my-4">
+                    <div class="control">
+                        <label class="label">Адрес получателя:</label>
+                        <input required  class="input" name="address" type="text" >
+                    </div>
+
+                </div>
+                 <div class="field my-4">
+                    <div class="control">
+                        <label class="label">Серия паспорта:</label>
+                        <input required  class="input" name="passport" type="text" >
+                    </div>
+
+                </div>
+                 <div class="field my-4">
+                    <div class="control">
+                        <label class="label">Номер получателя:</label>
+                        <input required  class="input" name="number" type="text" >
+                    </div>
+
+                </div>
+                <div class="field my-4">
+                    <div class="control">
+                        <label class="label">Дата:</label>
+                        <input required name="date" value="" class="input" type="date" placeholder="">
+                    </div>
+
+                </div>
+                <button  class="user_data_btn button is-medium is-fullwidth mt-4 is-info">
+                    Перейти к товарам
+                </button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
