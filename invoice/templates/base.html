@@ -8,78 +8,88 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
-    <link href="{% static 'bulma/css/bulma.min.css' %}"  type="text/css" rel="stylesheet" >
-    <link href="{% static 'css/style.css' %}"  type="text/css" rel="stylesheet" >
+    <link href="{% static 'bulma/css/bulma.min.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <div class="has-background-light">
-        <nav class="navbar container is-light" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
+<div class="has-background-light">
+    <nav class="navbar container is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
             <a class="navbar-item logo" href="{% url 'index' %}">
-<!--                <img class="mr-3" src="{% static 'images/header.png' %}" alt="">-->
+                <!--                <img class="mr-3" src="{% static 'images/header.png' %}" alt="">-->
                 Invoice
             </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+               data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
-          </div>
+        </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-<!--                  <a class="navbar-item">-->
-<!--                    Главная-->
-<!--                  </a>-->
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <!--                  <a class="navbar-item">-->
+                <!--                    Главная-->
+                <!--                  </a>-->
 
-<!--                  <a class="navbar-item">-->
-<!--                    Info-->
-<!--                  </a>-->
+                <!--                  <a class="navbar-item">-->
+                <!--                    Info-->
+                <!--                  </a>-->
 
-<!--                  <div class="navbar-item has-dropdown is-hoverable">-->
-<!--                    <a class="navbar-link">-->
-<!--                      More-->
-<!--                    </a>-->
-<!--    -->
-<!--                    <div class="navbar-dropdown">-->
-<!--                      <a class="navbar-item">-->
-<!--                        About-->
-<!--                      </a>-->
-<!--                      <a class="navbar-item">-->
-<!--                        Jobs-->
-<!--                      </a>-->
-<!--                      <a class="navbar-item">-->
-<!--                        Contact-->
-<!--                      </a>-->
-<!--                      <hr class="navbar-divider">-->
-<!--                      <a class="navbar-item">-->
-<!--                        Report an issue-->
-<!--                      </a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-              </div>
+                <!--                  <div class="navbar-item has-dropdown is-hoverable">-->
+                <!--                    <a class="navbar-link">-->
+                <!--                      More-->
+                <!--                    </a>-->
+                <!--    -->
+                <!--                    <div class="navbar-dropdown">-->
+                <!--                      <a class="navbar-item">-->
+                <!--                        About-->
+                <!--                      </a>-->
+                <!--                      <a class="navbar-item">-->
+                <!--                        Jobs-->
+                <!--                      </a>-->
+                <!--                      <a class="navbar-item">-->
+                <!--                        Contact-->
+                <!--                      </a>-->
+                <!--                      <hr class="navbar-divider">-->
+                <!--                      <a class="navbar-item">-->
+                <!--                        Report an issue-->
+                <!--                      </a>-->
+                <!--                    </div>-->
+                <!--                  </div>-->
+            </div>
 
             <div class="navbar-end">
-              <div class="navbar-item">
-                <div class="buttons">
-                  <a href="tel: +998980775750" class="button is-info">
-                    <strong>+998 98 077 57 50</strong>
-                  </a>
-                  <a href="https://t.me/khamraevamir" class="button is-light">
-                    @khamraevamir
-                  </a>
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a href="tel: +998980775750" class="button is-info">
+                            <strong>+998 98 077 57 50</strong>
+                        </a>
+                        <a href="https://t.me/khamraevamir" class="button is-light">
+                            @khamraevamir
+                        </a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </nav>
+        </div>
+    </nav>
+</div>
+<div class="header">
+{% block content %}
+
+{% endblock %}
+</div>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>Created</strong> by <a href="https://github.com/khamraevamir">Khamraev Amir</a>
+        </p>
+
     </div>
-    {% block content %}
-
-    {% endblock %}
-
-    <script>
+</footer>
+<script>
         document.addEventListener('DOMContentLoaded', () => {
 
           // Get all "navbar-burger" elements
@@ -101,11 +111,12 @@
           });
 
         });
-    </script>
-    <script src="https://kit.fontawesome.com/f871a93996.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-    <script src="{% static 'js/check.js' %}"></script>
+
+</script>
+<script src="https://kit.fontawesome.com/f871a93996.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/check.js' %}"></script>
 
 </body>
 </html>
