@@ -5,7 +5,8 @@ let products = JSON.parse(localStorage.getItem('invoice_products'))
 
 if(document.querySelector('.user_data_btn')){
     document.querySelector('.user_data_btn').addEventListener('click', (e)=> {
-        url = window.location.origin
+        url = window.location.href
+        url = url.slice(0, url.indexOf('/', 7))
         route = e.target.getAttribute('data-url')
         e.preventDefault()
         data = document.querySelector('.user_data_form').elements
@@ -28,7 +29,7 @@ if(document.querySelector('.user_data_btn')){
             json_obj = JSON.stringify(obj)
             if (sender && receiver && address && passport && number && date != ''){
                 localStorage.setItem('invoice_data', json_obj)
-                window.location.href = `${url}${route}`
+                window.location.href = `${url}/product_questionnaire/`
             }
         }
 
