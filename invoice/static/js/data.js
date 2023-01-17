@@ -43,6 +43,7 @@ if(document.querySelector('.data')){
 
         let product_price_td = document.createElement('td')
         product_price_td.className = 'py-1 '
+        product_price_td.innerText = invoice_products[index].price
 
         let product_last_td = document.createElement('td')
         product_last_td.className = 'py-1 '
