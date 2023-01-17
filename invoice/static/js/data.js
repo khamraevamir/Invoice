@@ -42,7 +42,7 @@ if(document.querySelector('.data')){
         product_brutto_td.className = 'py-1 '
 
         let product_price_td = document.createElement('td')
-        product_price_td.className = 'py-1 '
+        product_price_td.className = 'py-1 text-center'
         product_price_td.innerText = invoice_products[index].price
 
         let product_last_td = document.createElement('td')
