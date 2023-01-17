@@ -72,38 +72,42 @@ if(document.querySelector('.data')){
 
     let last_tr = document.createElement('tr')
 
-    let product_total_th = document.createElement('th')
-    product_total_th.className = 'py-3 text-center'
-    product_total_th.setAttribute('colspan', '2')
+    let product_total_weight_th = document.createElement('th')
+    product_total_weight_th.className = 'py-3 text-center'
+    product_total_weight_th.setAttribute('colspan', '2 ')
 
-    product_total_th.innerText = `TOTAL/ИТОГО`
-
-    let product_quantity_th = document.createElement('th')
-    product_quantity_th.className = 'py-1'
+    product_total_weight_th.innerText = `TOTAL WEIGHT/ИТОГО ВЕСА`
 
     let product_weight_th = document.createElement('th')
     product_weight_th.className = 'py-1 text-center'
-    product_weight_th.innerText = JSON.parse(localStorage.getItem('total_weight'))
+    product_weight_th.setAttribute('colspan', '5 ')
+    product_weight_th.innerText = `${JSON.parse(localStorage.getItem('total_weight'))} kg`
 
-    let product_brutto_th = document.createElement('th')
-    product_brutto_th.className = 'py-1'
 
-    let product_price_th = document.createElement('th')
-    product_price_th.className = 'py-1'
+//    --------------
+
+    let last_tr2 = document.createElement('tr')
+
+    let product_total_price_th = document.createElement('th')
+    product_total_price_th.className = 'py-3 text-center'
+    product_total_price_th.setAttribute('colspan', '2 ')
+
+    product_total_price_th.innerText = `TOTAL PRICE/ИТОГО СУММА`
 
     let product_sum_th = document.createElement('th')
-    product_sum_th.className = 'py-1 text-center'
-    product_sum_th.innerText = JSON.parse(localStorage.getItem('total_sum'))
+    product_sum_th.className = 'py-1 text-right pr-5    '
+    product_sum_th.setAttribute('colspan', '5 ')
+    product_sum_th.innerText = `${JSON.parse(localStorage.getItem('total_sum'))} $`
 
 
-    last_tr.appendChild(product_total_th)
-    last_tr.appendChild(product_quantity_th)
+    last_tr.appendChild(product_total_weight_th)
     last_tr.appendChild(product_weight_th)
-    last_tr.appendChild(product_brutto_th)
-    last_tr.appendChild(product_price_th)
-    last_tr.appendChild(product_sum_th)
+
+    last_tr2.appendChild(product_total_price_th)
+    last_tr2.appendChild(product_sum_th)
 
     product_table.appendChild(last_tr)
+    product_table.appendChild(last_tr2)
 
     let local = JSON.parse(localStorage.getItem('invoice_data'))
     document.querySelector('.invoice_date').innerHTML = `Дата: ${local.date}`
