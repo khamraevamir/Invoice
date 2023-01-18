@@ -43,12 +43,20 @@ if(document.querySelector('.data')){
 
         let product_price_td = document.createElement('td')
         product_price_td.className = 'py-1 text-center'
-        product_price_td.innerText = invoice_products[index].price
+        if(invoice_products[index].price == 0){
+            product_price_td.innerText = ''
+        } else {
+            product_price_td.innerText =  invoice_products[index].price
+        }
+
 
         let product_last_td = document.createElement('td')
-        product_last_td.className = 'py-1 '
-
-
+        product_last_td.className = 'py-1 text-center'
+        if(invoice_products[index].price * invoice_products[index].quantity == 0){
+            product_last_td.innerText = ''
+        } else {
+            product_last_td.innerText =  invoice_products[index].price * invoice_products[index].quantity
+        }
 
 
 
