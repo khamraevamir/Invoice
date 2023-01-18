@@ -13,16 +13,6 @@ class Product(models.Model):
         return self.name
 
 
-class Cart(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=1)
-
-    class Meta:
-        verbose_name = 'Корзина'
-        verbose_name_plural = 'Корзина'
-
-    def __str__(self):
-        return self.product.name
 
 
 class Invoice(models.Model):

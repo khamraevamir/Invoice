@@ -14,6 +14,7 @@ if(document.querySelector('.data')){
     number.innerText = invoice_data.number
 
 
+
     let invoice_products = JSON.parse(localStorage.getItem('invoice_products'))
 
     let product_table = document.querySelector('.product_table')
@@ -123,5 +124,46 @@ if(document.querySelector('.data')){
 
     let invoice = JSON.parse(localStorage.getItem('invoice_number'))
     document.querySelector('.invoice_number_factura').innerHTML = `${invoice}`
+
+
+    document.querySelector('.data').innerHTML = `
+        <input type="text" value=${invoice} name="number">
+        <input type="text" value=${JSON.parse(localStorage.getItem('total_weight'))} name="weight">
+        <input type="text" value=${local.date} name="date">
+        <input type="text" value=${JSON.parse(localStorage.getItem('total_sum'))} name="total">
+        <input type="text" value=${invoice_data.number} name="phone">
+        <input type="text" value=${invoice_data.receiver} name="receiver">
+        <input type="text" value=${invoice_data.sender} name="sender">
+        <input type="text" value=${invoice_data.passport} name="passport_seria">
+        <input type="text" value=${invoice_data.address} name="address">
+    `
+
+}
+
+if(document.querySelector('.form')){
+    let invoice_products = JSON.parse(localStorage.getItem('invoice_products'))
+
+    //  Products id
+    let ids_code = ''
+    for(let index=0; index < invoice_products.length; index++){
+        ids_code += `<input type="number" value="${invoice_products[index].id}" name="products[]">`
+    }
+
+
+    //  Products quantities
+    let quantites_code = ''
+    for(let index=0; index < invoice_products.length; index++){
+        quantites_code += `<input type="number" value="${invoice_products[index].quantity}" name="quantities[]">`
+    }
+
+    //  Products prices
+    let prices_code = ''
+    for(let index=0; index < invoice_products.length; index++){
+        prices_code += `<input type="number" value="${invoice_products[index].price}" name="prices[]">`
+    }
+    document.querySelector('.form').innerHTML = ids_code + quantites_code + prices_code
+
+
+
 
 }
