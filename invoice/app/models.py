@@ -2,7 +2,8 @@ from django.db import models
 
 
 class Product(models.Model):
-    name = models.CharField('Наименование', max_length=100, unique=True)
+    name = models.CharField('Наименование - RU', max_length=100, unique=True)
+    name_en = models.CharField('Наименование - EN', max_length=100, unique=True, null=True)
 
 
     class Meta:
@@ -10,7 +11,7 @@ class Product(models.Model):
         verbose_name_plural = 'Продукт'
 
     def __str__(self):
-        return self.name
+        return f'{self.name} -'f'{self.name_en}' if self.name_en != None else self.name
 
 
 

@@ -18,12 +18,13 @@
                     <tbody>
                     {% for product in products %}
                     <tr>
-                        <td data-price="{{product.price}}" data-id="{{product.id}}" id="product_id">
+                        <td data-price="{{product.price}}" data-id="{{product.id}}" data-en = {{product.name_en}} id="product_id">
                             {{forloop.counter}}
                         </td>
                         <td id="product_name">{{product.name}}</td>
                         <td>
                             <button data-id="{{product.id}}"
+
                                     class="add_product button is-success is-small ml-auto is-block">Добавить
                             </button>
                         </td>
